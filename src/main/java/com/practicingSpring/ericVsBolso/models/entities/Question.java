@@ -23,8 +23,6 @@ public class Question {
     @Column(nullable = false)
     private String questionText;
 
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
