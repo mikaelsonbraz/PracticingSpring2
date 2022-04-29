@@ -26,7 +26,7 @@ public class Result {
 
     @JoinColumn
     @OneToOne
-    private User user;
+    private Challenger challenger;
 
     @OneToMany
     private List<Question> questionList;
@@ -36,11 +36,11 @@ public class Result {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Result result = (Result) o;
-        return Objects.equals(idResult, result.idResult) && Objects.equals(score, result.score) && Objects.equals(user, result.user);
+        return Objects.equals(idResult, result.idResult) && Objects.equals(score, result.score) && Objects.equals(challenger, result.challenger);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idResult, score, user);
+        return Objects.hash(idResult, score, challenger);
     }
 }

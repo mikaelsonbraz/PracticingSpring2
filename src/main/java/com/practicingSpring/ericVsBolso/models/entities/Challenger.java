@@ -13,12 +13,12 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-public class User {
+public class Challenger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer idUser;
+    private Integer idChallenger;
 
     @Column(nullable = false)
     private String nick;
@@ -32,12 +32,12 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(idUser, user.idUser) && Objects.equals(nick, user.nick) && Objects.equals(result, user.result);
+        Challenger user = (Challenger) o;
+        return Objects.equals(idChallenger, user.idChallenger) && Objects.equals(nick, user.nick) && Objects.equals(result, user.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idUser, nick, result);
+        return Objects.hash(idChallenger, nick, result);
     }
 }
