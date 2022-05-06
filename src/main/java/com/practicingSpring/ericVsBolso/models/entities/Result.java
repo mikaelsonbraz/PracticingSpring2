@@ -29,6 +29,7 @@ public class Result {
     private Challenger challenger;
 
     @OneToMany
+    @ToString.Exclude
     private List<Question> questionList;
 
     @Override
@@ -36,11 +37,11 @@ public class Result {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Result result = (Result) o;
-        return Objects.equals(idResult, result.idResult) && Objects.equals(score, result.score) && Objects.equals(challenger, result.challenger);
+        return idResult.equals(result.idResult);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idResult, score, challenger);
+        return Objects.hash(idResult);
     }
 }

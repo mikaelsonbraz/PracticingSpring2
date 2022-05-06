@@ -32,12 +32,12 @@ public class Challenger {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Challenger user = (Challenger) o;
-        return Objects.equals(idChallenger, user.idChallenger) && Objects.equals(nick, user.nick) && Objects.equals(result, user.result);
+        Challenger that = (Challenger) o;
+        return idChallenger.equals(that.idChallenger);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idChallenger, nick, result);
+        return Objects.hash(idChallenger);
     }
 }

@@ -1,5 +1,6 @@
 package com.practicingSpring.ericVsBolso.models.entities;
 
+import com.practicingSpring.ericVsBolso.models.enums.Author;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,16 +24,19 @@ public class Question {
     @Column(nullable = false)
     private String questionText;
 
+    @Column(nullable = false)
+    private Author author;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Question question = (Question) o;
-        return Objects.equals(idQuestion, question.idQuestion) && Objects.equals(questionText, question.questionText);
+        return idQuestion.equals(question.idQuestion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idQuestion, questionText);
+        return Objects.hash(idQuestion);
     }
 }
